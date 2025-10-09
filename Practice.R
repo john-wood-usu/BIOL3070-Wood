@@ -19,3 +19,7 @@ head(data)
 View(data)
 str(data)
 dim(data) #dimensions
+
+git add .
+git commit -m "updated abstract and knitted new .md file"
+git push origin main --force

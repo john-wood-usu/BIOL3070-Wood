@@ -11,8 +11,9 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 # ABSTRACT
+The West Nile Virus (WNV) is a dangerous disease prevalent globally. The experiment design aims to discover which organisms are the largest reservoirs of West Nile Virus in the Salt Lake City area. After extracting collected mosquito blood, and sequencing its DNA, several host species were identified and counted. The counts of each species were tested against presence or absence of WNV and WNV positivity. The results indicated a positive correlation between house finch blood meal count and WNV positivity. A very low p-value indicated that the correlation was incredibly statistically significant. This suggests that house finches play a large role in the spread of West Nile Virus.
 
-Fill in abstract... Write this last, after finishing methods, results, and discussion. Summarize the overall study question, approach, results, and conclusion in a short paragraph.
+*Fill in abstract... Write this last, after finishing methods, results, and discussion. Summarize the overall study question, approach, results, and conclusion in a short paragraph.*
 
 # BACKGROUND
 West Nile Virus has plagued the globe for years. Although disease control efforts have mitigated its spread, the virus is still present and deadly. In the United States, West Nile Virus (WNV) causes over 1,300 severe illnesses affecting the central nervous system and even causes over 130 deaths annually (CDC, 2025). The primary method of transmission is via mosquitoes, causing WNV cases peak during the mosquito season.
