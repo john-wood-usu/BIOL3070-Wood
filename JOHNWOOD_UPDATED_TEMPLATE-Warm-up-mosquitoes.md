@@ -1,68 +1,73 @@
 Warm-up mini-Report: Mosquito Blood Hosts in Salt Lake City, Utah
 ================
 John Wood
-2025-10-09
+2025-10-11
 
 - [ABSTRACT](#abstract)
 - [BACKGROUND](#background)
+  - [*Figure 1* - Viremia Duration in North American
+    Birds](#figure-1---viremia-duration-in-north-american-birds)
 - [STUDY QUESTION and HYPOTHESIS](#study-question-and-hypothesis)
   - [Questions](#questions)
   - [Hypothesis](#hypothesis)
   - [Prediction](#prediction)
 - [METHODS](#methods)
   - [Data Collection](#data-collection)
-  - [Fill in 1st analysis
-    e.g. barplots](#fill-in-1st-analysis-eg-barplots)
-  - [Fill in 2nd analysis/plot e.g. generalized linear
-    model](#fill-in-2nd-analysisplot-eg-generalized-linear-model)
+  - [*Figure 2* - Blood Meal Count in WNV-negative and WNV-positive
+    Locations
+    Barplot](#figure-2---blood-meal-count-in-wnv-negative-and-wnv-positive-locations-barplot)
+  - [*Figure 3* - House Finch Blood Meal Count vs. WNV-Positive Pools &
+    WNV Positvity Rate Generalized Linear
+    Model](#figure-3---house-finch-blood-meal-count-vs-wnv-positive-pools--wnv-positvity-rate-generalized-linear-model)
 - [DISCUSSION](#discussion)
-  - [Interpretation of 1st analysis
-    (e.g. barplots)](#interpretation-of-1st-analysis-eg-barplots)
-  - [Interpretation of 2nd analysis (e.g. generalized linear
-    model)](#interpretation-of-2nd-analysis-eg-generalized-linear-model)
+  - [Barplot (*Figure 2*) Analysis](#barplot-figure-2-analysis)
+  - [Generalized Linear Model (*Figure 3*)
+    Analysis](#generalized-linear-model-figure-3-analysis)
 - [CONCLUSION](#conclusion)
 - [REFERENCES](#references)
 
 # ABSTRACT
 
-Fill in abstract… Write this last, after finishing methods, results, and
-discussion. Summarize the overall study question, approach, results, and
-conclusion in a short paragraph.
+The West Nile Virus (WNV) is a dangerous disease prevalent globally. The
+design of this study aimed to discover which organisms are the largest
+reservoirs of West Nile Virus in the Salt Lake City area. After
+extracting collected mosquito blood, and sequencing its DNA, several
+host species were identified and counted. The counts of each species
+were tested against presence or absence of WNV and WNV positivity. The
+results indicated a positive correlation between house finch blood meal
+count and WNV positivity. A very low p-value indicated that the
+correlation was highly statistically significant. This suggests that
+house finches act as a large reservoir in the spread of West Nile Virus
+in the Salt Lake City area.
 
 # BACKGROUND
 
-West Nile Virus has plagued the globe for years. Although disease
+West Nile Virus has plagued the globe for decades. Although disease
 control efforts have mitigated its spread, the virus is still present
 and deadly. In the United States, West Nile Virus (WNV) causes over
 1,300 severe illnesses affecting the central nervous system and even
 causes over 130 deaths annually (CDC, 2025). The primary method of
-transmission is via mosquitoes, causing WNV cases peak during the
+transmission is via mosquitoes, causing WNV cases to peak during the
 mosquito season.
 
-Mosquitoes feast on the blood of various organisms, causing their host’s
-DNA to be found in the mosquito’s blood. Because the virus is
+Mosquitoes rely on host blood meals for their life cycle, causing the
+host’s DNA to be found in the mosquito’s blood. Because the virus is
 transmitted by mosquitoes, analyzing mosquito blood offers great
 insights into how the virus spreads.
 
 Polymerase Chain Reaction (PCR) is a reliable method which utilizes Taq
-polymerase to multiply the DNA fragments for further analysis.The
-multiplied DNA can then be sequenced and matched to an online data bank
-(BLAST) to discover what organismal DNA is present in the mosquito
-blood.
+polymerase to amplify DNA segments for further analysis. Abundant DNA
+can then be sequenced and matched to an online data bank (BLAST) to
+identify which organism the sequence belongs to.
 
-*Provide background on the WNV system and why we are studying mosquito
-blood meals. Include information on DNA extractions, PCR, sequencing,
-and how this relates to identifying hosts. Support your statements with
-references.*
+Previous literature suggests that in North America, common birds
+including the Blue Jay, House Finch, and American Crow are competent
+reservoirs for the West Nile Virus (Komar, 2003). *Figure 1* highlights
+the days viremia is detectable in some common birds. House finches stand
+out as a fantastic candidate of study due to their long viremia and
+abundance in the Salt Lake City area.
 
-*Example: You might cite Komar et al. (2003) showing viremia duration in
-birds, which explains why house finches could act as amplifying hosts.
-Connect this to the prediction that locations with more house finch
-blood meals should also show higher rates of WNV-positive mosquito
-pools.*
-
-NOTE: Examples of data you can plot for the background info at
-<https://github.com/saarman/BIOL3070/>
+## *Figure 1* - Viremia Duration in North American Birds
 
 ``` r
 # Manually transcribe duration (mean, lo, hi) from the last table column
@@ -106,19 +111,20 @@ arrows(duration$lo, bp, duration$hi, bp,
 
 ## Questions
 
-Which species act as large reservoirs of west nile virus? Which species
-require further investigation to mitigate the spread of west nile virus?
+Which species act as large reservoirs of West Nile Virus in the Salt
+Lake City area? Which species require further investigation to mitigate
+the spread of West Nile Virus?
 
 ## Hypothesis
 
-House finches are the largest reservoir of west nile virus. House
-finches are responsible for a large portion of the spread of west nile
-virus in the Salt Lake City area.
+House finches are the largest reservoir of West Nile Virus. House
+finches are responsible for a large portion of the spread of West Nile
+Virus in the Salt Lake City area.
 
 ## Prediction
 
-Areas with higher counts of house finches will be more likely to test
-positive for west nile virus.
+Areas with higher blood meal counts of house finches will have more
+positive test results for West Nile Virus.
 
 *Fill in here… Turn the hypothesis into a testable prediction (e.g.,
 Locations with mosquito blood meals from house finches will also have
@@ -128,34 +134,26 @@ higher numbers of WNV-positive mosquito pools).*
 
 ## Data Collection
 
-Mosquitoes were collected by \_\_\_\_\_\_ traps in the Salt Lake City
-area. Geographical locaitons were identified as either WNV-positive or
-WNV-negative areas.
+Mosquitoes were collected by gravid and CO<sub>2</sub> traps in various
+urban, suburban, and rural locations surrounding Salt Lake City.
 
-The collected mosquitoes were crushed in small viles to extract the
-blood. The genome present in the blood underwent polymerase chain
-reaction and sequencing to determine specific DNA sequences present in
-the mosquito blood. The sequences identified were then compared with the
-BLAST online database to identify organism matches.
+The collected mosquitoes were crushed in small vials. The mosquito blood
+was then subjected to Polymerase Chain Reaction (PCR) and electronic
+sequencing to identify specific DNA sequences. The identified sequences
+were then compared with the BLAST online database to determine organism
+matches. The matched organisms revealed which hosts the mosquitoes had
+fed on for a blood meal.
 
-After the sequences were confidently matched to organisms in the Salt
-Lake City area, data analysis was conducted as shown below:
+Geographical locations were identified as either WNV-positive or
+WNV-negative. Organismal blood meal count and positivity of West Nile
+Virus were then compared.
 
-*Fill in here… Summarize the procedures and analyses you use in this
-report. In this section, describe what you did and why. Don’t just
-restate the code — explain the logic of each analysis in plain language.
-Keep each subsection short (2–4 sentences).*
+## *Figure 2* - Blood Meal Count in WNV-negative and WNV-positive Locations Barplot
 
-## Fill in 1st analysis e.g. barplots
-
-The number of mosquito blood meals from each host species was compared
-between sites with no WNV-positive polls and sites with one or more
-WNV-positive pools.
-
-*Fill in here… Explain that you compared the number of mosquito blood
-meals from each host species between sites with no WNV-positive pools
-and sites with one or more WNV-positive pools. Describe why a barplot
-helps visualize this comparison.*
+Host blood meal counts were aggregated and organized by species. To
+visualize the data, mosquito blood meal counts from each host species
+were compiled in two barplots: one showing sites with no WNV-positive
+pools and the other showing sites with one or more WNV-positive pools.
 
 ``` r
 ## import counts_matrix: data.frame with column 'loc_positives' (0/1) and host columns 'host_*'
@@ -253,12 +251,14 @@ par(op)
 host_species_colors <- species_colors
 ```
 
-## Fill in 2nd analysis/plot e.g. generalized linear model
+## *Figure 3* - House Finch Blood Meal Count vs. WNV-Positive Pools & WNV Positvity Rate Generalized Linear Model
 
-The strength of which house finch blood meal count predicted whether a
-site had WNV-positive pools or a higher WNV positivty rate was tested.
-These statistical tests formally evaluate the visual relationship seen
-in the previous barplot.
+Two generalized linear models were performed to statistically evaluate
+the relationship seen in the barplots. The first tested the correlation
+between house finch blood meal count and whether not a pool had at least
+one positive WNV result. The second tested the relationship between
+house finch blood meal count and the amount of positive tests in a
+location to further solidify any correlation.
 
 *Fill in here… Explain that you tested whether the presence or number of
 house finch blood meals predicts whether a site had WNV-positive pools
@@ -323,65 +323,83 @@ summary(glm2)
 
 # DISCUSSION
 
-## Interpretation of 1st analysis (e.g. barplots)
+## Barplot (*Figure 2*) Analysis
 
-As seen visually, the areas where mosquitoes had a larger count of blood
-meals from house finches also tested positive for west nile virus. Other
-species fluctuated, and did not appear to have any clear correlation
-with with the presence or absence of the virus in their areas. This
-suggests that the house finch acts as
+As seen visually, areas where mosquitoes had a larger count of blood
+meals from house finches also detected at least one positive result for
+West Nile Virus. Other species fluctuated in abundance between the
+WNV-negative and WNV-positive pools, and did not appear to have any
+clear correlation with the presence or absence of the virus. The
+relative prevalence of the house finch blood meal counts in WNV-positive
+areas compared to WNV-negative areas suggests that the bird is a large
+reservoir of the virus, playing a key role in its spread. This is likely
+due to the house finch’s relatively long viremia duration (see *Figure
+1*) and high abundance in the Salt Lake City area.
 
-The first analysis… fill in here what it was, the summary of the
-results, and your interpretation.
-
-## Interpretation of 2nd analysis (e.g. generalized linear model)
+## Generalized Linear Model (*Figure 3*) Analysis
 
 The first statistical test aimed to understand whether or not a higher
-number of blood meals of house finches predicted an area to have at
-least one positive result for west nile virus. The estimated slope of
-correlation was 0.3468, indicating a positive correlation. The p-value
-was 0.0287, indicating that the results very unlikely due to chance.
+house finch blood meal count predicted a site to have at least one
+WNV-positive pool. The estimated slope of correlation was 0.3468,
+indicating a positive correlation. The p-value was 0.0287, indicating
+that the correlation is statistically significant.
 
-The second tested analyzed whether or not a higher number of blood meals
-of house finches predicted more positivity (positive result counts) in
-an area. The estimated slope of correlation was 0.0275, indicating a
-positive correlation. The p-value was 4.54e-5, indicating an incredibly
-unlikely chance that the results were due to chance.
+The second tested analyzed whether or not a higher house finch blood
+meal count predicted more positivity (positive result counts) in a site.
+The estimated slope of correlation was 0.0275, indicating another
+positive correlation. The p-value was 4.54e-5, indicating the
+correlation is very statistically significant.
 
-Both these tests indicate the same conclusion: the visual results
-present in the barplot are statistically sound. It can be confidently
-reasoned that areas which include a higher number of house finch blood
-meals (suggesting a higher population of house finches) predict more
-positive results for west nile virus. Thus, in the Salt Lake area, house
-finches make up a large proportion of the reservoir.
+Both tests lead to the same inference: the visual results present in the
+barplots are statistically sound. It can be confidently reasoned that
+areas which include a higher number of house finch blood meals
+(suggesting a higher population of house finches) predict more positive
+results for West Nile Virus. Thus, in the Salt Lake area, house finches
+make up a large proportion of the WNV reservoir.
 
-It is critical that this issue be addressed to mitigate the spread of
-the virus.
+------------------------------------------------------------------------
 
-The second analysis… fill in here what it was, the summary of the
-results, and your interpretation.
+While well-designed, the study may have missed necessary blood meal
+pools because only two types of mosquito traps were used (gravid and
+CO<sub>2</sub>). Additionally, the collection period was only performed
+at one time of year, and did not capture mosquito pools throughout the
+peak of WNV season. Other collection strategies could be used in the
+future to ensure an accurate representation of the mosquito population
+is obtained. It is possible other organisms play a key role in WNV’s
+pathology.
+
+Knowing that house finches are largely responsible for the spread of
+West Nile Virus, several future actions could be taken. Future studies
+and protocols focused on the house finch could greatly reduce WNV in the
+Salt Lake City area. For example, a study could track house finches to
+understand their movement patterns throughout the area. Disease control
+centers could then focus their efforts (ex. mosquito spraying and animal
+vaccination) in areas with large house finch populations.
 
 # CONCLUSION
 
-After constructing a bar plot and performing statistical analyses, it
-can be confidently deduced that areas with more house finches, and more
-moquito blood meals of house finches test positive for west nile virus
-much more frequently.
-
-*Fill in here… State the overall answer to your research question, based
-on all analyses. Mention whether the evidence supports your hypothesis
-and what it suggests about WNV amplification in Salt Lake City.*
+The hypothesis in question predicted that house finches are the largest
+reservoir of West Nile Virus in the Salt Lake City area. Barplot and
+generalized linear model analyses provided strong statistical evidence
+that areas with higher blood meal counts from house finches predict more
+West Nile Virus positivity. Thus, the hypothesis is supported by
+statistically reliable data. Future study of house finches may reveal
+methods to mitigate the spread of West Nile Virus.
 
 # REFERENCES
 
-1.  Komar N, Langevin S, Hinten S, Nemeth N, Edwards E, Hettler D, Davis
+1.  Brandler S, Tangy F. Vaccines in development against West Nile
+    virus. Viruses. 2013 Sep 30;5(10):2384-409. doi: 10.3390/v5102384.
+    PMID: 24084235; PMCID: PMC3814594.
+
+2.  Centers for Disease Control and Prevention. (n.d.). About West Nile.
+    Centers for Disease Control and Prevention.
+    <https://www.cdc.gov/west-nile-virus/about/index.html>
+
+3.  ChatGPT. OpenAI, version Jan 2025. Used as a reference for functions
+    such as plot() and to correct syntax errors. Accessed 2025-10-11.
+
+4.  Komar N, Langevin S, Hinten S, Nemeth N, Edwards E, Hettler D, Davis
     B, Bowen R, Bunning M. Experimental infection of North American
     birds with the New York 1999 strain of West Nile virus. Emerg Infect
     Dis. 2003 Mar;9(3):311-22. <https://doi.org/10.3201/eid0903.020628>
-
-2.  ChatGPT. OpenAI, version Jan 2025. Used as a reference for functions
-    such as plot() and to correct syntax errors. Accessed 2025-10-09.
-
-3.  Centers for Disease Control and Prevention. (n.d.). About West Nile.
-    Centers for Disease Control and Prevention.
-    <https://www.cdc.gov/west-nile-virus/about/index.html>
