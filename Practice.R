@@ -21,5 +21,5 @@ str(data)
 dim(data) #dimensions
 
 git add .
-git commit -m "updated abstract and knitted new .md file"
+git commit -m "final abstract and knitted .md file"
 git push origin main --force
