@@ -1,0 +1,62 @@
+---
+title: "Music and Chronic Pain"
+author: "Norah Saarman"
+date: "`r Sys.Date()`"
+output:
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# ABSTRACT
+
+Fill in abstract... Write this last, after finishing methods, results, and discussion. Summarize the overall study question, approach, results, and conclusion in a short paragraph.
+
+# BACKGROUND
+
+
+# STUDY QUESTION and HYPOTHESIS
+
+## Questions  
+
+Does music decrease the sensation of pain in individuals with chronic pain?
+
+## Hypothesis 
+
+Listening to music decreases the sensation of pain.
+
+## Prediction
+
+Participants who listen to music will experience a lower sensation of pain.
+
+# METHODS
+
+Fill in here... Summarize the procedures and analyses you use in this report. In this section, describe what you did and why. Don’t just restate the code — explain the logic of each analysis in plain language. Keep each subsection short (2–4 sentences).
+
+#STATISTICAL ANALYSIS
+
+To visually compare the control (pink noise) against the treatment group (music), a table of values and barplot were contstructed measuring the pain sensation levels between the two groups.
+
+To statistically test the data, we will perform an ANOVA test to compare the means.
+###*Figure 1*
+```{r first-analysis, warning=FALSE}
+#simply showing the data captured in the table with values.
+read.csv("musicdataset.csv")
+```
+
+
+# DISCUSSION
+
+Fill in here... For each analysis, summarize what you found and interpret the results. Say whether they support or contradict your hypothesis.
+
+# CONCLUSION
+
+Fill in here... State the overall answer to your research question, based on all analyses. Mention whether the evidence supports your hypothesis.
+
+# REFERENCES     
+Fill in here... List all sources you cited in your background and throughout the report. Use a consistent style.a conclusion you can draw from your analysis.
+
+
+

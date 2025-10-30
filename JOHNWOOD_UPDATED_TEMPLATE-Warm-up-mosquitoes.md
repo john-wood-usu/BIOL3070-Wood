@@ -1,7 +1,7 @@
 Warm-up mini-Report: Mosquito Blood Hosts in Salt Lake City, Utah
 ================
 John Wood
-2025-10-11
+2025-10-27
 
 - [ABSTRACT](#abstract)
 - [BACKGROUND](#background)
@@ -125,10 +125,6 @@ Virus in the Salt Lake City area.
 
 Areas with higher blood meal counts of house finches will have more
 positive test results for West Nile Virus.
-
-*Fill in here… Turn the hypothesis into a testable prediction (e.g.,
-Locations with mosquito blood meals from house finches will also have
-higher numbers of WNV-positive mosquito pools).*
 
 # METHODS
 
@@ -259,12 +255,6 @@ between house finch blood meal count and whether not a pool had at least
 one positive WNV result. The second tested the relationship between
 house finch blood meal count and the amount of positive tests in a
 location to further solidify any correlation.
-
-*Fill in here… Explain that you tested whether the presence or number of
-house finch blood meals predicts whether a site had WNV-positive pools
-(binary) or a higher WNV positivity rate (numeric). Mention that this
-statistical test lets you formally evaluate the relationship suggested
-by the barplots.*
 
 ``` r
 # second-analysis-or-plot, glm with house finch alone against binary +/_
@@ -397,7 +387,7 @@ methods to mitigate the spread of West Nile Virus.
     <https://www.cdc.gov/west-nile-virus/about/index.html>
 
 3.  ChatGPT. OpenAI, version Jan 2025. Used as a reference for functions
-    such as plot() and to correct syntax errors. Accessed 2025-10-11.
+    such as plot() and to correct syntax errors. Accessed 2025-10-27.
 
 4.  Komar N, Langevin S, Hinten S, Nemeth N, Edwards E, Hettler D, Davis
     B, Bowen R, Bunning M. Experimental infection of North American
