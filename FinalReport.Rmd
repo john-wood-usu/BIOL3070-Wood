@@ -14,22 +14,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Fill in abstract... Write this last, after finishing methods, results, and discussion. Summarize the overall study question, approach, results, and conclusion in a short paragraph.
 
+
 # BACKGROUND
 
+Music has been a deep and important part of human culture and expression for millennia. Yet, not much is understood about how music affects the human body physiologically. As research develops, music has been shown to provide a myriad of benefits to human quality of life. Recently, S. Aalbers and others found that when combined with treatment as usual, music had a significant positive effect on patients with depression (Aalbers, 2017).
+
+This study explores how music affects the pain sensation of individuals diagnosed with chronic pain. The results will provide exciting insights to a potential link between music and pain reduction.
 
 # STUDY QUESTION and HYPOTHESIS
 
 ## Questions  
 
-Does music decrease the sensation of pain in individuals with chronic pain?
+Does music affect the sensation of pain in individuals with chronic pain?
 
 ## Hypothesis 
 
-Listening to music decreases the sensation of pain.
+Listening to music decreases the sensation of pain in individuals with chronic pain.
 
 ## Prediction
 
-Participants who listen to music will experience a lower sensation of pain.
+Participants who listen to music will report a lower sensation of pain.
 
 # METHODS
 
@@ -46,6 +50,120 @@ To statistically test the data, we will perform an ANOVA test to compare the mea
 read.csv("musicdataset.csv")
 ```
 
+```{r boxplot, warning=FALSE}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+#changed column setup to make boxplot work
+data <- read.csv("musicdataset.csv")
+data_long <- data %>%
+  pivot_longer(cols = c(5, 6,7,8), names_to = "treatment", values_to = "value")
+
+#plot
+    ggplot(data_long, aes(x=treatment, y=value, fill=treatment)) + 
+    geom_boxplot(alpha=0.6) +
+    
+    scale_y_continuous(limits = c(0, 10), breaks = seq(0, 10, 1)) +
+  
+    theme_classic() +
+    theme(legend.position="none") +
+    scale_fill_brewer(palette="Spectral") +
+    theme(axis.text.x = element_text(size=15)) +
+    theme(axis.text.y = element_text(size=12)) + 
+    theme(axis.title.y = element_text(size=16, face="bold", margin = margin(r = 10))) +
+    ylab("Pain Level") +
+    xlab("")
+```
+
+``` {r}
+ggplot(
+  data_long %>%
+    mutate(
+      treatment = recode(treatment,
+                         pic1 = "Before Control",
+                         pic2 = "After Control",
+                         pim1 = "Before Music",
+                         pim2 = "After Music"),
+      # optional: control order on x-axis
+      treatment = factor(treatment, levels = c("Before Control", "After Control", "Before Music", "After Music"))
+    ),
+  aes(x = treatment, y = value, fill = treatment)
+) +
+  geom_boxplot(alpha = 0.6) +
+  scale_y_continuous(breaks = seq(0, 10, 1)) +
+  coord_cartesian(ylim = c(0, 10)) +
+  scale_fill_brewer(palette = "Spectral") +
+  theme_classic() +
+  theme(
+    legend.position = "none",
+    axis.text.x = element_text(size = 12, face = "bold"),
+    axis.text.y = element_text(size = 12),
+    axis.title.x = element_text(size = 16, face = "bold", margin = margin(t = 10)),
+    axis.title.y = element_text(size = 16, face = "bold", margin = margin(r = 10))
+  ) +
+  xlab("Pain Intensity") +
+  ylab("Pain Level")
+```
+
+###*Figure 2*
+``` {r code pic chunks}
+
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+data <- read.csv("musicdataset.csv")
+
+# Pivot pic1 and pic2 into long format
+data_long <- data %>%
+  pivot_longer(cols = c(pic1, pic2), names_to = "treatment", values_to = "value")
+
+# Make boxplot
+ggplot(data_long, aes(x = treatment, y = value, fill = treatment)) +
+  geom_boxplot(alpha = 0.7, width = 0.6) +
+  theme_classic() +
+  scale_fill_brewer(palette = "Set2") +
+  ylab("Pain Level") +
+  xlab("") +
+  theme(
+    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 16, face = "bold"),
+    legend.position = "none"
+  )
+
+```
+
+pim 1 and 2 code chunk 
+
+``` {r code chunk pim}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+data <- read.csv("musicdataset.csv")
+
+# Pivot pim1 and pim2 into long format
+data_long_pim <- data %>%
+  pivot_longer(cols = c(pim1, pim2), names_to = "treatment", values_to = "value")
+
+# Make boxplot
+ggplot(data_long_pim, aes(x = treatment, y = value, fill = treatment)) +
+  geom_boxplot(alpha = 0.7, width = 0.6) +
+  theme_classic() +
+  scale_fill_brewer(palette = "Set2") +
+  ylab("Pain Level") +
+  xlab("") +
+  theme(
+    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 16, face = "bold"),
+    legend.position = "none"
+  )
+```
+
+
+##Statistical Analysis
+Still working on this part...had to remove so file could knit.
 
 # DISCUSSION
 
@@ -56,6 +174,8 @@ Fill in here... For each analysis, summarize what you found and interpret the re
 Fill in here... State the overall answer to your research question, based on all analyses. Mention whether the evidence supports your hypothesis.
 
 # REFERENCES     
+Aalbers, S., Fusar‐Poli, L., Freeman, R. E., Spreen, M., Ket, J. C., Vink, A. C., ... & Gold, C. (2017). Music therapy for depression. Cochrane database of systematic reviews, (11).
+
 Fill in here... List all sources you cited in your background and throughout the report. Use a consistent style.a conclusion you can draw from your analysis.
 
 

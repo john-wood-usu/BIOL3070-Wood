@@ -1,7 +1,7 @@
 Warm-up mini-Report: Mosquito Blood Hosts in Salt Lake City, Utah
 ================
 John Wood
-2025-10-27
+2025-11-04
 
 - [ABSTRACT](#abstract)
 - [BACKGROUND](#background)
@@ -387,7 +387,7 @@ methods to mitigate the spread of West Nile Virus.
     <https://www.cdc.gov/west-nile-virus/about/index.html>
 
 3.  ChatGPT. OpenAI, version Jan 2025. Used as a reference for functions
-    such as plot() and to correct syntax errors. Accessed 2025-10-27.
+    such as plot() and to correct syntax errors. Accessed 2025-11-04.
 
 4.  Komar N, Langevin S, Hinten S, Nemeth N, Edwards E, Hettler D, Davis
     B, Bowen R, Bunning M. Experimental infection of North American
