@@ -1,7 +1,7 @@
 Music and Chronic Pain
 ================
 Norah Saarman
-2025-11-22
+2025-12-03
 
 - [ABSTRACT](#abstract)
 - [BACKGROUND](#background)
@@ -10,6 +10,22 @@ Norah Saarman
   - [Hypothesis](#hypothesis)
   - [Prediction](#prediction)
 - [METHODS](#methods)
+  - [*Figure 1* - Boxplot of Before and After Control and
+    Treatment](#figure-1---boxplot-of-before-and-after-control-and-treatment)
+  - [*Figure 2* - Control Boxplots: Before and
+    After](#figure-2---control-boxplots-before-and-after)
+  - [*Figure 3* - Treatment Boxplots: Before Music and After
+    Music](#figure-3---treatment-boxplots-before-music-and-after-music)
+  - [Statistical Analysis](#statistical-analysis)
+    - [*Figure 4* - T-Test of Control: Before and
+      After](#figure-4---t-test-of-control-before-and-after)
+    - [*Figure 5* - T-Test of Treatment: Before and
+      After](#figure-5---t-test-of-treatment-before-and-after)
+- [RESULTS](#results)
+  - [Boxplot Figures](#boxplot-figures)
+  - [Statistical Analysis](#statistical-analysis-1)
+    - [*Figure 4*](#figure-4)
+    - [*Figure 5*](#figure-5)
 - [DISCUSSION](#discussion)
 - [CONCLUSION](#conclusion)
 - [REFERENCES](#references)
@@ -18,58 +34,74 @@ Norah Saarman
 
 This study investigates whether listening to music can reduce the
 sensation of pain in individuals diagnosed with chronic pain due to
-Fibromyalgia. Participants rated their pain before and after listening
+fibromyalgia. Participants rated their pain before and after listening
 to either five minutes of self-selected pleasant music or a pink-noise
 control stimulus. Boxplot visualizations and paired t-tests were used to
-compare pre- and post-treatment pain levels across both conditions.
-Results showed a statistically significant decrease in pain following
-the music condition, while the control condition produced no meaningful
-reduction and even suggested a slight increase in reported pain. These
-findings support the hypothesis that music can serve as an effective
-non-pharmacological method for reducing chronic pain. Future research
-with larger samples and broader auditory conditions may further clarify
-the mechanisms underlying music-induced analgesia.
+compare pre- and post-treatment pain levels across both conditions and
+test for statistical significance. Results showed a statistically
+significant decrease in pain following the music condition, while the
+control condition produced no meaningful reduction and even suggested a
+slight increase in reported pain. These findings support the hypothesis
+that listening to music decreases the sensation of pain in individuals
+with chronic pain from fibromyalgia.
 
 # BACKGROUND
 
 Music has been a deep and important part of human culture and expression
-for millennia. Yet, not much is understood about how music affects the
-human body physiologically. As research develops, music has been shown
-to provide a myriad of benefits to human quality of life. Recently, S.
-Aalbers and others found that when combined with treatment as usual,
-music had a significant positive effect on patients with depression
-(Aalbers, 2017).
+for millennia. Yet, much is still to be understood about how music
+affects the human body physiologically. As research develops, music has
+been shown to provide a myriad of benefits to human quality of life.
+Recently, Aalbers *et al.* (2017) found that when combined with
+treatment as usual, music had a significant positive effect on patients
+with depression.
+
+Fibromyalgia is a chronic medical condition classified as a central pain
+syndrome. It brings along a host of unpleasant symptoms including
+irritable bowel syndrome, temporomandibular disorder, chronic low back
+pain, and certain other chronic pain disorders (Clauw, 2009).
 
 This study explores how music affects the pain sensation of individuals
-diagnosed with chronic pain. The results will provide exciting insights
-to a potential link between music and pain reduction.
+diagnosed with chronic pain from fibromyalgia. It addresses a
+significant need in our society since many traditional medicine and
+treatment have been largely deemed unsatisfactory by patients. The
+results will provide exciting insights into a potential link between
+music and pain reduction.
 
 # STUDY QUESTION and HYPOTHESIS
 
 ## Questions
 
-Does music affect the sensation of pain in individuals with chronic
-pain?
+Does music affect the sensation of pain in individuals with chronic pain
+from fibromyalgia?
 
 ## Hypothesis
 
 Listening to music decreases the sensation of pain in individuals with
-chronic pain.
+chronic pain from fibromyalgia.
 
 ## Prediction
 
-Participants who listen to music will report a lower sensation of pain.
+Participants of the study will report a lower sensation of pain after
+listening to music.
 
 # METHODS
 
-The dataset was provided by Pando-Naude et al. (5). The study involved
-20 individuals diagnosed with Fibromyalgia (FM). The original study had
-participants rate their pain level on a scale of 1-10 before and after
-listening to 5 minutes of either music chosen by the individual or pink
-noise (control). By requirement, the music had a tempo less than 120 bpm
-and was deemed familiar and pleasant by the participant.
+The dataset was provided by Garza-Villarreal *et al.* (2019). The study
+collected the pain data of 20 individuals diagnosed with fibromyalgia.
+Each participant underwent a control and treatment test. Pain level were
+self-reported on a scale of 1-10 before and after each test. In the
+control test, participants listened to pink noise for 5 minutes. In the
+treatment test, participants listened to music chosen by themselves. By
+requirement, the chosen music had a tempo less than 120 bpm and was
+deemed familiar and pleasant by the participant. No other information
+about the music selection or patient pool was provided in the dataset.
 
-\##*Figure 1* - Boxplot of Before and After Control and Treatment
+Boxplots were constructed using R to visualize data. A T-test was then
+performed to analyze the statistical significance of the mean
+differences between before and after groups seen in the boxplot.
+
+## *Figure 1* - Boxplot of Before and After Control and Treatment
+
 Visualization of 4 data groups (Before Control, After Control, Before
 Music, After Music) was presented via boxplots. All 4 plots are
 presented first, then control and treatment groups are separated for
@@ -125,7 +157,7 @@ data_total <- data %>%
 
 ![](FinalReport_files/figure-gfm/total%20boxplot-1.png)<!-- -->
 
-\##*Figure 2* - Control Boxplots: Before and After
+## *Figure 2* - Control Boxplots: Before and After
 
 ``` r
 library(ggplot2)
@@ -164,7 +196,7 @@ data_control <- data %>%
 
 ![](FinalReport_files/figure-gfm/control%20boxplot-1.png)<!-- -->
 
-\##*Figure 3* - Treatment Boxplots: Before Music and After Music
+## *Figure 3* - Treatment Boxplots: Before Music and After Music
 
 ``` r
 library(ggplot2)
@@ -201,8 +233,12 @@ data_music <- data %>%
 
 ![](FinalReport_files/figure-gfm/music%20boxplot-1.png)<!-- -->
 
-\##Statistical Analysis T-test was performed to analyze mean between
-before and after control and test fro significance.
+## Statistical Analysis
+
+### *Figure 4* - T-Test of Control: Before and After
+
+T-test was performed to analyze the difference in means before and after
+pink noise (control) and test for significance.
 
 ``` r
 t.test(data$pic2, data$pic1, paired = TRUE)
@@ -220,8 +256,10 @@ t.test(data$pic2, data$pic1, paired = TRUE)
     ## mean difference 
     ##       0.4705882
 
-T-test was performed to analyze mean between before and after music and
-test for significance.
+### *Figure 5* - T-Test of Treatment: Before and After
+
+T-test was performed to analyze the difference in means before and after
+music (treatment) and test for significance.
 
 ``` r
 t.test(data$pim2, data$pim1, paired = TRUE)
@@ -239,41 +277,76 @@ t.test(data$pim2, data$pim1, paired = TRUE)
     ## mean difference 
     ##       -1.117647
 
+# RESULTS
+
+## Boxplot Figures
+
+The boxplots visualize a the trends of the pain level reports before and
+after control and treatment groups. In the control group, the average
+and lower quartile of reported pain level increased in the after control
+group. The upper quartile did not change, and the entire range of
+reports remained constant (0-10). In the treatment group, the average
+and distribution (upper and lower quartiles) of reported pain level
+decreased in the after music group. Again, the entire range remained
+constant (0-10). The average and distribution of before control and
+after music groups appear identical.
+
+## Statistical Analysis
+
+### *Figure 4*
+
+The control (pink noise) had a marginally significant effect (*p*-vaue:
+0.07204) on pain sensation. The mean difference was 0.4705882,
+suggesting a positive effect.
+
+### *Figure 5*
+
+The treatment (music) had a significant effect (*p*-value:0.007141) on
+pain sensation. The mean difference was -1.117647, suggesting a negative
+effect.
+
 # DISCUSSION
 
-The results show statistical evidence suggesting that music leads to a
-greater decrease in pain after subjects listened to music. The control
-exhibited moderate correlation for the pink noise to affect pain levels
-in the positive direction, meaning that there may be evidence suggesting
-that pink noise increased pain. The treatment group showed a strong
-statistical significance, rejecting the null hypothesis that music does
-not affect pain sensation. Furthermore, there was a greater mean
-difference that was in the negative direction for music, reflecting a
-visible decrease in the average reported pain levels in patients.
+The results show statistical evidence suggesting music leads to a
+decrease in pain sensation. The control exhibited moderate correlation
+for the pink noise to affect pain levels in the positive direction,
+meaning there may be evidence suggesting that pink noise increased pain.
+In this study, it is possible that untreated pain increased over time,
+adding more statistical significance to the decrease found in the
+treatment group. The null hypothesis that music does not affect pain
+sensation can be confidently rejected. Furthermore, there was a greater
+mean difference that was in the negative direction for music, reflecting
+a visible decrease in the average reported pain levels in patients.
 
-The major limitation was each person’s interpretation of pain because of
-each individual’s personal experiences and pain tolerances. A way to
-reduce the effects of this is to use a visual pain scale, such as the
-“Wong-Baker FACES Scale,” that can provide a visual reference point to
-help patients determine pain levels on a scale that could be more
-universal. The experiment utilized data from only 20 patients. Future
-research may benefit from a larger sample size in order to achieve more
-concise data.
+The results were limited due to individual interpretation of pain. Each
+participant carried a distinct pain treshold and reporting behavior.
+These effect could be reduced by using a visual pain scale, such as the
+Wong-Baker FACES Scale, which provides a visual reference point to help
+patients determine pain levels on a scale that could be more universal.
+Results were also hindered due to the small sample size of only 20
+patients. Larger, more diverse pools (including patients with pain not
+associated with fibromyalgia) would yield results with stronger
+statistical support and broader implications.
 
 Further research should compare both different forms of “noise” (white,
 brown, etc.) and multiple music genres to other methods of pain
 reduction, such as medication or physical/talk therapy. Regardless,
 because of the idiopathic cause of this disease, the evidence showing
 decreased pain from music is a step towards a more comfortable future in
-patients who have this diagnosis, as they may find affordable and
-effective methods for finding relief.
+patients with this diagnosis, as they may find affordable and effective
+methods for pain relief.
 
 # CONCLUSION
 
 After testing the pain sensation of individuals with chronic pain due to
-Fibromyalgia with and without music, it can be concluded with strong
-statistical significance that listening to familiar, pleasant music
-reduces the sensation of pain.
+fibromyalgia with and without music, it can be concluded with strong
+statistical significance (*p*-value: 0.00714, Mean Difference: -1.118)
+that listening to familiar, pleasant music reduces the sensation of
+pain. Control conditions of exposure to pink noise exhibited an increase
+in reported pain sensation with moderate to low statistical strength
+(*p*-value: 0.0720, Mean Difference: -0.4706). These findings suggest an
+exciting new method of pain relief for patients suffering from
+fibromyalgia-related chronic pain.
 
 # REFERENCES
 
@@ -282,7 +355,8 @@ Vink, A. C., … & Gold, C. (2017). Music therapy for depression. Cochrane
 database of systematic reviews, (11).
 
 ChatGPT. OpenAI, version Jan 2025. Used as a reference for functions
-such as plot() and to correct syntax errors. Accessed 2025-11-22.
+such as plot(), to correct syntax errors, and for first draft of
+abstract. Accessed 2025-12-03.
 
 Clauw, Daniel J. “Fibromyalgia: An Overview.” The American Journal of
 Medicine, vol. 122, no. 12, Dec. 2009,
